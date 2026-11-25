@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si pudiera estar contigo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="escenario" id="escenario">
+
+        <!-- Título -->
+        <div class="encabezado">
+            <h1>Si pudiera estar contigo ahora mismo...</h1>
+            <p>Estaríamos aquí, tú y yo, sin preocuparnos por nada más.</p>
+        </div>
+
+        <!-- Botón para cambiar el cielo -->
+        <button id="anochecer">☾ Anochecer</button>
+
+        <!-- Dibujo de la playa -->
+        <svg class="playa" viewBox="0 0 400 550"
+             preserveAspectRatio="xMidYMid slice">
+
+            <defs>
+                <linearGradient id="cielo" x1="0" y1="0" x2="0" y2="1">
+                    <stop id="cielo-superior" stop-color="#ce929c"/>
+                    <stop id="cielo-inferior" offset="1" stop-color="#ffe0ac"/>
+                </linearGradient>
+            </defs>
+
+            <!-- Cielo -->
+            <rect width="400" height="550" fill="url(#cielo)"/>
+
+            <!-- Estrellas -->
+            <g id="estrellas" fill="#fff8dd" opacity="0">
+                <circle cx="30" cy="45" r="2"/>
+                <circle cx="98" cy="180" r="2"/>
+                <circle cx="355" cy="110" r="1.5"/>
+                <circle cx="205" cy="190" r="1.8"/>
+                <circle cx="47" cy="220" r="1.4"/>
+                <circle cx="320" cy="165" r="2"/>
+                <circle cx="190" cy="22" r="1.5"/>
+            </g>
+
+            <!-- Sol -->
+            <circle id="sol" cx="285" cy="225" r="45" fill="#fff0c1"/>
+
+            <!-- Mar -->
+            <path id="mar"
+                  d="M0 278 Q90 268 180 278 T400 278 V480 H0Z"
+                  fill="#92adb4"/>
+
+            <!-- Reflejos del agua -->
+            <g stroke="#f9e3ce" opacity=".65" stroke-width="2">
+                <path d="M240 296h90 M258 308h53 M220 324h135
+                         M265 338h70 M15 333h110 M30 363h85"/>
+            </g>
+
+            <!-- Arena -->
+            <path d="M0 398 Q140 353 400 428 V550 H0Z"
+                  fill="#e8c6a3"/>
+
+            <!-- Olas -->
+            <path class="olas"
+                  d="M0 398 Q140 353 400 428"
+                  stroke="#fff4dd" stroke-width="7" fill="none"/>
+
+            <!-- Sombra de la pareja -->
+            <ellipse cx="200" cy="469" rx="88" ry="13"
+                     fill="#a88172" opacity=".24"/>
+
+            <!-- Pareja abrazada -->
+            <g transform="translate(0,-40)">
+
+                <!-- Adi -->
+                <path d="M125 500 L131 414 Q119 377 150 356
+                         L184 357 Q215 373 217 410 L211 500Z"
+                      fill="#fff8ed"/>
+
+                <circle cx="170" cy="330" r="29" fill="#684333"/>
+
+                <path d="M142 328 Q136 292 168 296
+                         Q201 294 199 326 Q176 309 142 328"
+                      fill="#302523"/>
+
+                <path d="M158 350v15h23v-17" fill="#684333"/>
+
+                <!-- Ally -->
+                <path d="M213 500 L217 429 Q207 398 238 383
+                         Q263 380 276 416 L289 500Z"
+                      fill="#d99a9e"/>
+
+                <circle cx="241" cy="358" r="25" fill="#d7a080"/>
+
+                <path d="M217 361 Q205 327 239 327
+                         Q273 326 271 365 L279 414
+                         Q250 411 253 366 Q238 344 217 361"
+                      fill="#654239"/>
+
+                <!-- Abrazo -->
+                <path d="M142 385 Q177 429 242 404"
+                      stroke="#fff8ed" stroke-width="27"
+                      stroke-linecap="round" fill="none"/>
+
+                <path d="M236 403l18 -6"
+                      stroke="#684333" stroke-width="14"
+                      stroke-linecap="round"/>
+
+            </g>
+
+        </svg>
+
+        <!-- Corazones interactivos -->
+        <button class="corazon" id="corazon1">♡</button>
+        <button class="corazon" id="corazon2">♡</button>
+        <button class="corazon" id="corazon3">♡</button>
+
+        <!-- Botones inferiores -->
+        <div class="parte-inferior">
+
+            <button id="musica">♫ Ocean</button>
+
+            <button id="carta">
+                Tengo algo que decirte ♡
+            </button>
+
+            <p>Para Ally, con amor de Adi.</p>
+
+        </div>
+
+        <!-- Ventana de mensajes -->
+        <div id="ventana" class="ventana" hidden>
+            <div class="mensaje">
+                <span class="adorno">♡</span>
+                <h2 id="titulo-mensaje"></h2>
+                <p id="texto-mensaje"></p>
+                <button id="cerrar">Volver a nuestro lugar</button>
+            </div>
+        </div>
+
+        <!-- Reproductor de música -->
+  
+<div id="reproductor" hidden>
+
+    <iframe
+        style="border-radius: 12px;"
+        src="https://open.spotify.com/embed/track/6qoIFQfdmaQF9A1gb67tR7"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+</div>
+
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
